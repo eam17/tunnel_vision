@@ -48,7 +48,7 @@ export class DashboardPage implements OnInit {
    private imageCollection: AngularFirestoreCollection<MyData>;
 
    userEmail: string;
-   //Variables end
+      //Variables end
 
   constructor(
     private navCtrl: NavController,
@@ -64,12 +64,12 @@ export class DashboardPage implements OnInit {
   }
   //Runs every time page is opened
   ngOnInit(){
-    /*
+    
     if(this.authService.userDetails()){
       this.userEmail = this.authService.userDetails().email;
     }else{
       this.navCtrl.navigateBack('');
-    }*/
+    }
   }
   //Logs out the user
   logout(){

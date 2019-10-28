@@ -69,6 +69,7 @@
       </ion-card-title>
     </ion-card-header>
 
+    <!--Displays uploaded image & Upload More button -->
     <!--<ion-card-content>
       <div *ngIf="UploadedFileURL | async as url">
         <img [src]="url" />
@@ -98,7 +99,12 @@
       <a [href]="item.filepath" target="_blank" rel="noopener">Download</a>
     </ion-card-content>
   </ion-card>
+
+  
+
+  <h3 text-center>Your email: {{userEmail}}</h3>
 </ion-content>
+
 
 
 <ion-footer (click)="logout()">
