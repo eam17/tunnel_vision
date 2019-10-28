@@ -17,16 +17,31 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
 import { ReactiveFormsModule } from '@angular/forms';
+
+//Image picker
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
  
-firebase.initializeApp(environment.firebase);
+firebase.initializeApp(environment.firebase);//need an environment.ts file with credentials
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireAuthModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    AngularFireAuthModule, 
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'tunnel-vision'), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
+  ],
   providers: [
     StatusBar,
     SplashScreen,
+    //FileSizeFormatPipe,
     AuthenticateService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

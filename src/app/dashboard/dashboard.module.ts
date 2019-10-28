@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { DashboardPage } from './dashboard.page';
 
+//File sizing
+import { FileSizeFormatPipe } from './file-size-format.pipe';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DashboardPage]
+  declarations: [DashboardPage,FileSizeFormatPipe]
 })
 export class DashboardPageModule {}
