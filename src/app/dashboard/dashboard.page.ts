@@ -50,19 +50,23 @@ export class DashboardPage implements OnInit {
    userEmail: string;
       //Variables end
 
+    //Connecting to database
   constructor(
     private navCtrl: NavController,
     private authService: AuthenticateService,
     private storage: AngularFireStorage, 
-    private database: AngularFirestore
+    private database: AngularFirestore,
+    //private UserID: string
   ) {
     this.isUploading = false;
     this.isUploaded = false;
+    //UserID = this.authService.userDetails().uid;
     //Set collection where our documents/ images info will save
     this.imageCollection = database.collection<MyData>('tunnelFiles');
-    this.images = this.imageCollection.valueChanges();
+    this.images = this.imageCollection.doc('photos').collection<MyData>(this.authService.userDetails().uid).valueChanges();
   }
   //Runs every time page is opened
+  //Auth the user
   ngOnInit(){
     
     if(this.authService.userDetails()){
@@ -103,7 +107,8 @@ export class DashboardPage implements OnInit {
     this.fileName = file.name;
 
     // The storage path
-    const path = `tunnelFiles/${new Date().getTime()}_${file.name}`;
+
+    const path = `tunnelFiles/${this.authService.userDetails().uid}/${new Date().getTime()}_hi${file.name}`;
 
     // Totally optional metadata
     const customMetadata = { app: 'Tunnel Img upload' };
@@ -146,7 +151,7 @@ export class DashboardPage implements OnInit {
     const id = this.database.createId();
 
     //Set document id with value in database
-    this.imageCollection.doc(id).set(image).then(resp => {
+    this.imageCollection.doc('photos').collection(this.authService.userDetails().uid).doc(id).set(image).then(resp => {
       console.log(resp);
     }).catch(error => {
       console.log("error " + error);

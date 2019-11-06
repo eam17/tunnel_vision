@@ -70,19 +70,18 @@
     </ion-card-header>
 
     <!--Displays uploaded image & Upload More button -->
-    <!--<ion-card-content>
+    <ion-card-content><!--
       <div *ngIf="UploadedFileURL | async as url">
         <img [src]="url" />
         <a [href]="url" target="_blank" rel="noopener">Download</a>
       </div>
-      File Size: {{ fileSize | fileSizePipe }}
+      File Size: {{ fileSize | fileSizePipe }}-->
       <ion-button
         expand="full"
         color="success"
         (click)="isUploading = isUploaded = false"
-        >Upload More</ion-button
-      >
-    </ion-card-content>-->
+        >Upload More</ion-button>
+    </ion-card-content>
   </ion-card>
 
   <h2 text-center>Your Image</h2>
