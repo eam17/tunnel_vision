@@ -1,0 +1,40 @@
+
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 200%;
+    
+    border: solid;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    width: 350px;
+    margin: none;
+    padding: none;
+  }
+
+ // <img src="https://img.mobiscroll.com/demos/card_6.png">
+ //background-image: url("cat.jpg");
+
+ .cell{
+   width: 50px;
+   height: 50px;
+   border: 1px solid #333;
+   float: left;
+ }
+
+ .grid{
+   position: absolute;
+   width: 350px;
+ }

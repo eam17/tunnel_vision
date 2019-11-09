@@ -157,4 +157,9 @@ export class DashboardPage implements OnInit {
       console.log("error " + error);
     });
   }
+
+  //Go to image page
+  goToImagePage(){
+    this.navCtrl.navigateForward('/image');
+  }
 }

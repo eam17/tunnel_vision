@@ -48,7 +48,7 @@ export class LoginPage implements OnInit {
     ]
   };
  
- 
+  //Login user
   loginUser(value){
     this.authService.loginUser(value)
     .then(res => {

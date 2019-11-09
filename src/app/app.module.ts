@@ -23,6 +23,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
  
+
+
 firebase.initializeApp(environment.firebase);//need an environment.ts file with credentials
 
 @NgModule({

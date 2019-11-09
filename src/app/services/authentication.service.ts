@@ -5,7 +5,7 @@ import * as firebase from 'firebase/app';
 export class AuthenticateService {
 
   constructor(){}
-
+  //Register user
   registerUser(value){
    return new Promise<any>((resolve, reject) => {
      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
@@ -14,16 +14,17 @@ export class AuthenticateService {
        err => reject(err))
    })
   }
-
+  //Log in user
   loginUser(value){
    return new Promise<any>((resolve, reject) => {
      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
      .then(
+
        res => resolve(res),
        err => reject(err))
    })
   }
-
+  //Logout user
   logoutUser(){
     return new Promise((resolve, reject) => {
       if(firebase.auth().currentUser){
