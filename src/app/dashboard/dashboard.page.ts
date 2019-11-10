@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import {  NavController, ModalController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
+
+import { ImagePage } from './../image/image.module';
+
+import { Router } from '@angular/router';
 
 //Image picker
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
@@ -13,7 +17,6 @@ export interface MyData {
   filepath: string;
   size: number;
 }
-
 
 @Component({
   selector: 'app-dashboard',
@@ -53,6 +56,7 @@ export class DashboardPage implements OnInit {
     //Connecting to database
   constructor(
     private navCtrl: NavController,
+    private route: Router,
     private authService: AuthenticateService,
     private storage: AngularFireStorage, 
     private database: AngularFirestore,
@@ -159,7 +163,10 @@ export class DashboardPage implements OnInit {
   }
 
   //Go to image page
-  goToImagePage(){
-    this.navCtrl.navigateForward('/image');
+  goToImagePage(path){
+    path = path || 'No Path';
+    this.route.navigate(['image', { data: path}]);
   }
+
+  
 }

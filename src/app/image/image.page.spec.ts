@@ -3,6 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImagePage } from './image.page';
 
+
+
+import '@ionic/core';
+
 describe('ImagePage', () => {
   let component: ImagePage;
   let fixture: ComponentFixture<ImagePage>;

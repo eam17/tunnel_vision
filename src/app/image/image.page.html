@@ -1,6 +1,10 @@
+
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>Image</ion-title>
+    <ion-title>Image</ion-title><ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,64 +20,21 @@
     
 
   </ion-card>
-
-
   
+<main>
+  <canvas id="grid" width="2000" height="2000"></canvas>
+  <canvas id="cell" width="250" height="250"></canvas>
+</main>
+  
+<ion-button>small grid</ion-button>
+<ion-button>big grid</ion-button>
 
-  <h3 text-center>Your email: {{userEmail}}</h3>
+
+
 </ion-content>
 
 
-<div class="container" style="background-image:url('https://img.mobiscroll.com/demos/card_6.png');">
-  <!--//5x6-->
-  <div class="grid">
-      <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-      </div>
-      <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-      </div>
-      <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-      </div>
-      <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-      </div>
-      <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-      </div>
-  </div>
-</div>
+
 
 <ion-footer (click)="logout()">
   <ion-toolbar color="secondary">

@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -94,7 +97,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      <img [src]="item.filepath" />
+      <img [src]="item.filepath" (click)="goToImagePage(item.filepath)" />
       <a [href]="item.filepath" target="_blank" rel="noopener">Download</a>
     </ion-card-content>
   </ion-card>
@@ -104,6 +107,7 @@
   <h3 text-center>Your email: {{userEmail}}</h3>
   <h3 text-center> <a (click)="goToImagePage()">Go to Image page</a></h3>
 </ion-content>
+  
 
 
 

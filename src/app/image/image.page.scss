@@ -38,3 +38,19 @@
    position: absolute;
    width: 350px;
  }
+
+ #userImage{
+   display: none;
+ }
+
+ #grid, #cell{
+  position: absolute;
+  top: 0; left: 0;
+}
+main, #grid, #cell{
+  width: 100vmin;
+  height: 100vmin;
+}
+#cell{
+  display: none;
+}
