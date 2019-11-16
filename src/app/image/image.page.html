@@ -2,33 +2,24 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>Image</ion-title><ion-buttons slot="start">
+    <ion-title>Image</ion-title>
+    <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-buttons (click)="goToInfo()" slot="end">
+      <ion-button ><ion-icon name="help"></ion-icon></ion-button>
      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card color="light" text-center>
-    <ion-card-header>
-      <ion-card-title>
-        Your image
-      </ion-card-title>
-    </ion-card-header>
-
-    
-
-  </ion-card>
+ 
   
 <main>
   <canvas id="grid" width="2000" height="2000"></canvas>
   <canvas id="cell" width="250" height="250"></canvas>
 </main>
-  
-<ion-button>small grid</ion-button>
-<ion-button>big grid</ion-button>
-
 
 
 </ion-content>

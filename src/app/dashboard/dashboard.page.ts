@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {  NavController, ModalController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
 
-import { ImagePage } from './../image/image.module';
 
 import { Router } from '@angular/router';
 
@@ -67,7 +66,7 @@ export class DashboardPage implements OnInit {
     //UserID = this.authService.userDetails().uid;
     //Set collection where our documents/ images info will save
     this.imageCollection = database.collection<MyData>('tunnelFiles');
-    this.images = this.imageCollection.doc('photos').collection<MyData>(this.authService.userDetails().uid).valueChanges();
+    
   }
   //Runs every time page is opened
   //Auth the user
@@ -75,7 +74,10 @@ export class DashboardPage implements OnInit {
     
     if(this.authService.userDetails()){
       this.userEmail = this.authService.userDetails().email;
+      console.log("logged in");
+      this.images = this.imageCollection.doc('photos').collection<MyData>(this.authService.userDetails().uid).valueChanges();
     }else{
+      console.log("not logged in");
       this.navCtrl.navigateBack('');
     }
   }
@@ -101,6 +103,7 @@ export class DashboardPage implements OnInit {
     // Validation for Images Only
     if (file.type.split('/')[0] !== 'image') { 
      console.error('unsupported file type :( ')
+     alert('Unsupported file type!')
      return;
     }
 
@@ -168,5 +171,8 @@ export class DashboardPage implements OnInit {
     this.route.navigate(['image', { data: path}]);
   }
 
+  goToInfo(){
+    this.route.navigate(['info']);
+  }
   
 }

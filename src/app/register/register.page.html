@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Register</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-buttons (click)="goToInfo()" slot="end">
+        <ion-button ><ion-icon name="help"></ion-icon></ion-button>
+       </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

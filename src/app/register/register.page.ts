@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { AuthenticateService } from '../services/authentication.service';
 import { NavController } from '@ionic/angular';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -28,6 +30,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private route: Router,
     private authService: AuthenticateService,
     private formBuilder: FormBuilder
   ) {}
@@ -60,6 +63,10 @@ export class RegisterPage implements OnInit {
 
   goLoginPage(){
     this.navCtrl.navigateBack('');
+  }
+
+  goToInfo(){
+    this.route.navigate(['info']);
   }
 
 

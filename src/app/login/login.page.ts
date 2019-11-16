@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -17,6 +19,7 @@ export class LoginPage implements OnInit {
   constructor(
  
     private navCtrl: NavController,
+    private route: Router,
     private authService: AuthenticateService,
     private formBuilder: FormBuilder
  
@@ -62,6 +65,10 @@ export class LoginPage implements OnInit {
  
   goToRegisterPage(){
     this.navCtrl.navigateForward('/register');
+  }
+
+  goToInfo(){
+    this.route.navigate(['info']);
   }
  
 }

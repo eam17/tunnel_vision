@@ -4,6 +4,9 @@
     <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
      </ion-buttons>
+     <ion-buttons (click)="goToInfo()" slot="end">
+        <ion-button ><ion-icon name="help"></ion-icon></ion-button>
+       </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -87,25 +90,17 @@
     </ion-card-content>
   </ion-card>
 
-  <h2 text-center>Your Image</h2>
+  <h2 text-center>Your Images</h2>
 
   <ion-card color="light" text-center *ngFor="let item of images | async">
-    <ion-card-header>
-      <ion-card-title>
-        {{ item.name }}
-      </ion-card-title>
-    </ion-card-header>
-
     <ion-card-content>
       <img [src]="item.filepath" (click)="goToImagePage(item.filepath)" />
-      <a [href]="item.filepath" target="_blank" rel="noopener">Download</a>
     </ion-card-content>
   </ion-card>
 
   
 
   <h3 text-center>Your email: {{userEmail}}</h3>
-  <h3 text-center> <a (click)="goToImagePage()">Go to Image page</a></h3>
 </ion-content>
   
 
