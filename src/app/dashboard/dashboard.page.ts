@@ -103,7 +103,7 @@ export class DashboardPage implements OnInit {
     // Validation for Images Only
     if (file.type.split('/')[0] !== 'image') { 
      console.error('unsupported file type :( ')
-     alert('Unsupported file type!')
+     alert('Unsupported file type! Please choose .JPG, .PNG, .SVG or .GIF instead.')
      return;
     }
 
